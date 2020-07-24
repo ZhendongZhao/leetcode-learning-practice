@@ -186,9 +186,26 @@ public class Array {
      *   [12, 6, 8, 9],
      *   [16, 7,10,11]
      * ]
+     *
+     * 思路：对于矩阵中第 ii 行的第 jj 个元素，在旋转后，它出现在倒数第 ii 列的第 jj 个位置。
+     * 矩阵中的元素matrix[row][col]，旋转后新位置matrix new[col][n−row−1]
+     * a.原地旋转
+     * b.翻转 使用b
      */
     public void rotate(int[][] matrix) {
-
+        int n = matrix.length;
+        for (int i = 0; i < n; i++) {
+            for (int j = i; j < n; j++) {
+                int tmp = matrix[i][j];
+                matrix[i][j] = matrix[j][i];
+                matrix[j][i] = tmp;
+            }
+            for (int j = 0; j < n / 2; j++) {
+                int tmp = matrix[i][j];
+                matrix[i][j] = matrix[i][n - j - 1];
+                matrix[i][n - j - 1] = tmp;
+            }
+        }
     }
 
 }
