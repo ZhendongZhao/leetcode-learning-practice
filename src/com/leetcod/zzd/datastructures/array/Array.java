@@ -266,7 +266,7 @@ public class Array {
      * 给定矩阵中的元素总数不会超过 100000 。
      */
     public int[] findDiagonalOrder(int[][] matrix) {
-
+        return null;
     }
 
 }
