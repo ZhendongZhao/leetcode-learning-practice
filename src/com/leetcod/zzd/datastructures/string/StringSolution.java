@@ -1,7 +1,5 @@
 package com.leetcod.zzd.datastructures.string;
 
-import sun.print.SunMinMaxPage;
-
 import java.util.Arrays;
 
 /**
@@ -274,5 +272,43 @@ public class StringSolution {
             }
         }
         return slow;
+    }
+
+    /**
+     * 最大连续1的个数
+     * 给定一个二进制数组， 计算其中最大连续1的个数。
+     *
+     * 示例 1:
+     *
+     * 输入: [1,1,0,1,1,1]
+     * 输出: 3
+     * 解释: 开头的两位和最后的三位都是连续1，所以最大连续1的个数是 3.
+     * 注意：
+     *
+     * 输入的数组只包含 0 和1。
+     * 输入数组的长度是正整数，且不超过 10,000。
+     *
+     * 思路：一次遍历
+     *
+     * 算法：
+     * 用一个计数器 count 记录 1 的数量，另一个计数器 maxCount 记录当前最大的 1 的数量。
+     * 当我们遇到 1 时，count 加一。
+     * 当我们遇到 0 时：
+     * 将 count 与 maxCount 比较，maxCoiunt 记录较大值。
+     * 将 count 设为 0。
+     * 返回 maxCount。
+     */
+    public int findMaxConsecutiveOnes(int[] nums) {
+        int count = 0;
+        int maxCount = 0;
+        for (int num : nums) {
+            if (num == 1) {
+                count += 1;
+            } else {
+                maxCount = Math.max(count, maxCount);
+                count = 0;
+            }
+        }
+        return Math.max(count, maxCount);
     }
 }
