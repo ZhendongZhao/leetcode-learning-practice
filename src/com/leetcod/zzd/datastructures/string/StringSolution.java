@@ -400,4 +400,28 @@ public class StringSolution {
         }
         return triangle;
     }
+
+    /**
+     * 杨辉三角 II
+     * 给定一个非负索引 k，其中 k ≤ 33，返回杨辉三角的第 k 行。
+     *
+     * 示例:
+     *
+     * 输入: 3
+     * 输出: [1,3,3,1]
+     */
+    public List<Integer> getRow(int rowIndex) {
+        int pre = 1;
+        List<Integer> cur = new ArrayList<>();
+        cur.add(1);
+        for (int i = 1; i <= rowIndex; i++) {
+            for (int j = 1; j < i; j++) {
+                int temp = cur.get(j);
+                cur.set(j, pre + cur.get(j));
+                pre = temp;
+            }
+            cur.add(1);
+        }
+        return cur;
+    }
 }
