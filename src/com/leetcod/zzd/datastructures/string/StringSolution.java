@@ -1,6 +1,8 @@
 package com.leetcod.zzd.datastructures.string;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author: zhendong.Z
@@ -353,5 +355,49 @@ public class StringSolution {
             }
         }
         return ans == Integer.MAX_VALUE ? 0 : ans;
+    }
+
+    /**
+     * 杨辉三角
+     *
+     * 给定一个非负整数 numRows，生成杨辉三角的前 numRows 行。
+     * 在杨辉三角中，每个数是它左上方和右上方的数的和。
+     *
+     * 示例:
+     *
+     * 输入: 5
+     * 输出:
+     * [
+     *      [1],
+     *     [1,1],
+     *    [1,2,1],
+     *   [1,3,3,1],
+     *  [1,4,6,4,1]
+     * ]
+     *
+     */
+    public List<List<Integer>> generate(int numRows) {
+        List<List<Integer>> triangle = new ArrayList<List<Integer>>();
+        //如果是0行，直接返回1
+        if (numRows == 0) {
+            return triangle;
+        }
+        //如果numRows大于0，第一行总是1
+        triangle.add(new ArrayList<>());
+        triangle.get(0).add(1);
+        for (int rowNum = 1; rowNum < numRows; rowNum++) {
+            List<Integer> row = new ArrayList<>();
+            List<Integer> preRow = triangle.get(rowNum - 1);
+            //第一个元素总是1
+            row.add(1);
+            //遍历元素，当上一行的左右两个元素的和为当前行的元素
+            for (int j = 1; j < rowNum; j++) {
+                row.add(preRow.get(j - 1) + preRow.get(j));
+            }
+            //最后一行元素也总是1
+            row.add(1);
+            triangle.add(row);
+        }
+        return triangle;
     }
 }
