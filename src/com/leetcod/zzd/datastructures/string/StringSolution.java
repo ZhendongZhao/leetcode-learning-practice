@@ -68,9 +68,33 @@ public class StringSolution {
      * 输入: "cbbd"
      * 输出: "bb"
      *
+     * 思路：动态规划
+     * P(i,j)=true 中j−i+1（即子串长度）的最大值。注意：在状态转移方程中，我们是从长度较短的字符串向长度较长的字符串进行转移的，
+     * 因此一定要注意动态规划的循环顺序。
      */
     public String longestPalindrome(String s) {
-        return null;
+        int n = s.length();
+        boolean[][] dp = new boolean[n][n];
+        String ans = "";
+        for (int l = 0; l < n; ++l) {
+            for (int i = 0; i + l < n; ++i) {
+                int j = i + l;
+                if (l == 0) {
+                    dp[i][j] = true;
+                } else {
+                    boolean b = s.charAt(i) == s.charAt(j);
+                    if (l == 1) {
+                        dp[i][j] = b;
+                    } else {
+                        dp[i][j] = (b && dp[i + 1][j - 1]);
+                    }
+                }
+                if (dp[i][j] && l + 1 > ans.length()) {
+                    ans = s.substring(i, i + l + 1);
+                }
+            }
+        }
+        return ans;
     }
 
     /**
