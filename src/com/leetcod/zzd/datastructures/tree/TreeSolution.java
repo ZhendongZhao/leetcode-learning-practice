@@ -170,4 +170,63 @@ public class TreeSolution {
         return res;
     }
 
+    /**
+     * 给定一个二叉树，返回它的 后序 遍历。
+     *
+     * 示例:
+     *
+     * 输入: [1,null,2,3]
+     *    1
+     *     \
+     *      2
+     *     /
+     *    3
+     *
+     * 输出: [3,2,1]
+     * 进阶: 递归算法很简单，你可以通过迭代算法完成吗？
+     *
+     */
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> res = new ArrayList<Integer>();
+        postorder(root, res);
+        return res;
+    }
+    public void postorder(TreeNode root, List<Integer> res) {
+        if (root == null) {
+            return;
+        }
+        postorder(root.left, res);
+        postorder(root.right, res);
+        res.add(root.val);
+    }
+
+    /**
+     * 迭代
+     */
+    public List<Integer> postorderTraversal1(TreeNode root) {
+        List<Integer> res = new ArrayList<Integer>();
+        if (root == null) {
+            return res;
+        }
+
+        Deque<TreeNode> stack = new LinkedList<TreeNode>();
+        TreeNode prev = null;
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            if (root.right == null || root.right == prev) {
+                res.add(root.val);
+                prev = root;
+                root = null;
+            } else {
+                stack.push(root);
+                root = root.right;
+            }
+        }
+        return res;
+    }
+
 }
