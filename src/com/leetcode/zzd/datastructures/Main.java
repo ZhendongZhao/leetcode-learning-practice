@@ -1,4 +1,4 @@
-package com.leetcod.zzd.datastructures;
+package com.leetcode.zzd.datastructures;
 
 public class Main {
 

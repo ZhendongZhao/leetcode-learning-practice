@@ -1,4 +1,4 @@
-package com.leetcod.zzd.datastructures.stack;
+package com.leetcode.zzd.datastructures.stack;
 
 /**
  * @author: zhendong.Z

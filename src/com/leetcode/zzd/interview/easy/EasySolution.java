@@ -1,4 +1,4 @@
-package com.leetcod.zzd.interview.easy;
+package com.leetcode.zzd.interview.easy;
 
 import java.util.HashSet;
 import java.util.Set;

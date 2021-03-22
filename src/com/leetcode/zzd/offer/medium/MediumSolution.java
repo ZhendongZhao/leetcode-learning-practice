@@ -1,4 +1,4 @@
-package com.leetcod.zzd.offer.medium;
+package com.leetcode.zzd.offer.medium;
 
 /**
  * @author: zhendong.Z
@@ -49,4 +49,6 @@ public class MediumSolution {
         }
         return false;
     }
+
+
 }

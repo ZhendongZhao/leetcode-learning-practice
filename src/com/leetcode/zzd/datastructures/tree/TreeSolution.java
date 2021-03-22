@@ -1,4 +1,4 @@
-package com.leetcod.zzd.datastructures.tree;
+package com.leetcode.zzd.datastructures.tree;
 
 import java.util.ArrayList;
 import java.util.Deque;

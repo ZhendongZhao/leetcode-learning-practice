@@ -1,4 +1,4 @@
-package com.leetcod.zzd.datastructures.queue;
+package com.leetcode.zzd.datastructures.queue;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,4 +1,4 @@
-package com.leetcod.zzd.datastructures.array;
+package com.leetcode.zzd.datastructures.array;
 
 import java.util.ArrayList;
 import java.util.Arrays;

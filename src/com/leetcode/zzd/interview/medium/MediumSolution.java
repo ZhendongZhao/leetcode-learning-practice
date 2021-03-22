@@ -1,4 +1,4 @@
-package com.leetcod.zzd.interview.medium;
+package com.leetcode.zzd.interview.medium;
 
 /**
  * @author: zhendong.Z
