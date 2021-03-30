@@ -1,13 +1,21 @@
 package com.leetcode.zzd.offer.easy;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
+import java.util.Stack;
 
 /**
  * @author: zhendong.Z
  * @date: 2021-01-29 上午10:19
  */
 public class EasySolution {
+
+    public class ListNode {
+     int val;
+     ListNode next;
+     ListNode(int x) { val = x; }
+    }
 
     /**
      * 数组中重复的数字
@@ -60,5 +68,32 @@ public class EasySolution {
             }
         }
         return sb.toString();
+    }
+
+    /**
+     * 从尾到头打印链表
+     * 输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
+     * 示例 1：
+     *
+     * 输入：head = [1,3,2]
+     * 输出：[2,3,1]
+     *  
+     * 限制：
+     * 0 <= 链表长度 <= 10000
+     * 思路：递归或者辅助栈，先入后出
+     */
+    public int[] reversePrint(ListNode head) {
+        Stack<ListNode> stack = new Stack<>();
+        ListNode temp = head;
+        while (temp != null) {
+            stack.push(temp);
+            temp = temp.next;
+        }
+        int size = stack.size();
+        int[] print = new int[size];
+        for (int i = 0; i < size; i++) {
+            print[i] = stack.pop().val;
+        }
+        return print;
     }
 }
