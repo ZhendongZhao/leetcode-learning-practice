@@ -17,6 +17,17 @@ public class EasySolution {
      ListNode(int x) { val = x; }
     }
 
+
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int x) {
+            val = x;
+        }
+    }
+
+
     /**
      * 数组中重复的数字
      * 找出数组中重复的数字。
@@ -96,4 +107,59 @@ public class EasySolution {
         }
         return print;
     }
+
+    /**
+     * 用两个栈实现一个队列。队列的声明如下，请实现它的两个函数 appendTail 和 deleteHead ，分别完成在队列尾部插入整数和在队列头部删除整数的功能。(若队列中没有元素，deleteHead 操作返回 -1 )
+     *
+     *  
+     *
+     * 示例 1：
+     *
+     * 输入：
+     * ["CQueue","appendTail","deleteHead","deleteHead"]
+     * [[],[3],[],[]]
+     * 输出：[null,null,3,-1]
+     * 示例 2：
+     *
+     * 输入：
+     * ["CQueue","deleteHead","appendTail","appendTail","deleteHead","deleteHead"]
+     * [[],[],[5],[2],[],[]]
+     * 输出：[null,-1,null,null,5,2]
+     *
+     */
+
+
+    /**
+     * 青蛙跳台阶问题
+     * 一只青蛙一次可以跳上1级台阶，也可以跳上2级台阶。求该青蛙跳上一个 n 级的台阶总共有多少种跳法。
+     *
+     * 答案需要取模 1e9+7（1000000007），如计算初始结果为：1000000008，请返回 1。
+     *
+     * 示例 1：
+     *
+     * 输入：n = 2
+     * 输出：2
+     * 示例 2：
+     *
+     * 输入：n = 7
+     * 输出：21
+     * 示例 3：
+     *
+     * 输入：n = 0
+     * 输出：1
+     * 思路：动态规划，
+     */
+    public int numWays(int n) {
+        int a = 1;
+        int b = 1;
+        int sum;
+        for (int i = 0; i < n; i++) {
+            sum = (a + b) % 1000000007;
+            a = b;
+            b = sum;
+        }
+        return a;
+    }
+
+
 }

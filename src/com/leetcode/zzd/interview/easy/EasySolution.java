@@ -10,6 +10,7 @@ import java.util.Set;
 public class EasySolution {
 
     /**
+     * 判断字符是否唯一
      * 实现一个算法，确定一个字符串 s 的所有字符是否全都不同。
      *
      * 示例 1：

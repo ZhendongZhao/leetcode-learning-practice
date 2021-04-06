@@ -1,5 +1,7 @@
 package com.leetcode.zzd.offer.medium;
 
+import com.leetcode.zzd.offer.easy.EasySolution;
+
 /**
  * @author: zhendong.Z
  * @date: 2021-02-20 下午4:44
@@ -48,6 +50,32 @@ public class MediumSolution {
             }
         }
         return false;
+    }
+
+    /**
+     * 重建二叉树
+     * 输入某二叉树的前序遍历和中序遍历的结果，请重建该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
+     * 例如，给出
+     * 前序遍历 preorder = [3,9,20,15,7]
+     * 中序遍历 inorder = [9,3,15,20,7]
+     * 返回如下的二叉树：
+     *
+     *     3
+     *    / \
+     *   9  20
+     *     /  \
+     *    15   7
+     *
+     * 限制：
+     *
+     * 0 <= 节点个数 <= 5000
+     * 思路：
+     * 二叉树前序遍历的顺序为：先遍历根节点；随后递归地遍历左子树；最后递归地遍历右子树。
+     *
+     * 二叉树中序遍历的顺序为：先递归地遍历左子树；随后遍历根节点；最后递归地遍历右子树。
+     */
+    public EasySolution.TreeNode buildTree(int[] preorder, int[] inorder) {
+
     }
 
 
