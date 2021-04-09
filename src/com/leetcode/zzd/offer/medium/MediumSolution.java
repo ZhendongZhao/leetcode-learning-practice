@@ -75,7 +75,7 @@ public class MediumSolution {
      * 二叉树中序遍历的顺序为：先递归地遍历左子树；随后遍历根节点；最后递归地遍历右子树。
      */
     public EasySolution.TreeNode buildTree(int[] preorder, int[] inorder) {
-
+        return null;
     }
 
     /**
@@ -99,7 +99,7 @@ public class MediumSolution {
      * 输出：false
      */
     public boolean exist(char[][] board, String word) {
-
+        return true;
     }
 
 
