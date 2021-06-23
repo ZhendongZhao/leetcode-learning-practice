@@ -1,5 +1,6 @@
 package com.leetcode.zzd.offer.easy;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
@@ -459,6 +460,33 @@ public class EasySolution {
         head.next.next = head;
         head.next = null;
         return newHead;
+    }
+
+    /**
+     * 最小的k个数
+     * 输入整数数组 arr ，找出其中最小的 k 个数。例如，输入4、5、1、6、2、7、3、8这8个数字，则最小的4个数字是1、2、3、4。
+     *
+     * 示例 1：
+     * 输入：arr = [3,2,1], k = 2
+     * 输出：[1,2] 或者 [2,1]
+     * 示例 2：
+     *
+     * 输入：arr = [0,1,2,1], k = 1
+     * 输出：[0]
+     *
+     * 限制：
+     * 0 <= k <= arr.length <= 10000
+     * 0 <= arr[i] <= 10000
+     * 思路：1、快排后取前k个数，最高效
+     * 2、大根堆（前K小）\小根堆（前K大），java用PriorityQueue
+     */
+    public int[] getLeastNumbers(int[] arr, int k) {
+        int [] sortArr = new int[k];
+        Arrays.sort(arr);
+        for (int i = 0; i<k; ++i){
+            sortArr[i] = arr[i];
+        }
+        return sortArr;
     }
 
 
